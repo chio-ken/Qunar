@@ -1,7 +1,7 @@
 # qunar
 
 > A simple web project of Qunar
-# For pratice
+  For pratice
 ## Build Setup
 
 ``` bash

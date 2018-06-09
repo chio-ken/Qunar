@@ -3,7 +3,7 @@
         <div class="title"> 热销推荐</div>
         <ul>
             <li class="item border-bottom"
-                v-for="item of recommendList"
+                v-for="item of list"
                 :key="item.id"
             >
                 <img class="item-img" :src="item.imgUrl">
@@ -19,25 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_200x200_7690e4cd.jpg',
-        title: '北京欢乐谷',
-        desc: '这里特别受欢迎哦'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1804/c8/c88bb5e69c9a9c5ea3.img.jpg_200x200_740720ff.jpg',
-        title: '古北水镇',
-        desc: '走进画中的那个小镇'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_200x200_0938a8f2.jpg',
-        title: '北京野生动物园',
-        desc: '百余种动物，让您离自然更近'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

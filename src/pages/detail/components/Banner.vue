@@ -3,18 +3,18 @@
     <div class="banner" @click="handleBannerClick">
       <img
         class="banner-img"
-        src="//img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_600x330_a80ff353.jpg"
+        :src="bannerImg"
       />
       <div class="banner-info">
-        <div class="banner-title">北京欢乐谷(AAAA景区)</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe63b;</span>
-          16
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
     <common-gallary
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallary"
       @close="handleGallaryClose"
     >
@@ -26,10 +26,14 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/1501/ab/ab02fceb3fa0a60e.water.jpg_350x240_e7f0f154.jpg', 'https://imgs.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_350x240_5291130a.jpg']
+      showGallary: false
     }
   },
   methods: {
